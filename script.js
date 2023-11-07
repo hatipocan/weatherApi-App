@@ -13,10 +13,13 @@ async function getCity() {
 
     cardContainer.innerHTML += `
     <article >
+        <div>Country : ${weatherData.location.country}</div>
         <div>Location : ${weatherData.location.name}</div>
+        <div>Local Date/Time : ${weatherData.location.localtime}</div>
         <div>Temperature : ${weatherData.current.temp_c} C</div>
         <div>Feels Like : ${weatherData.current.feelslike_c} C</div>
-        <div>Local Date/Time : ${weatherData.location.localtime}</div>
+        <div>Humidity : ${weatherData.current.humidity} %</div>
+        <div>Condition : ${weatherData.current.condition.text}</div>
     </article>
     `;
 };
