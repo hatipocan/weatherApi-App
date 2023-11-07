@@ -10,16 +10,17 @@ async function getCity() {
     );
 
     const weatherData = await response.json();
+    const weatherDataIcon = (`${weatherData.current.condition.icon}`)
 
     cardContainer.innerHTML += `
-    <article >
+    <article>
         <div>Country : ${weatherData.location.country}</div>
         <div>Location : ${weatherData.location.name}</div>
         <div>Local Date/Time : ${weatherData.location.localtime}</div>
         <div>Temperature : ${weatherData.current.temp_c} C</div>
         <div>Feels Like : ${weatherData.current.feelslike_c} C</div>
         <div>Humidity : ${weatherData.current.humidity} %</div>
-        <div>Condition : ${weatherData.current.condition.text}</div>
+        <div>Condition : ${weatherData.current.condition.text} <img src="${weatherDataIcon}"> </div>
     </article>
     `;
 };
